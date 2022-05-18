@@ -30,8 +30,9 @@
 
 ## Demo
 
-<a href="https://polite-entremet-aa6d00.netlify.app/
+<a href="https://amazing-paletas-8ac804.netlify.app/
 ">MovieMove</a>
+
 
 ## 과제 회고
 
