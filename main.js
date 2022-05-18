@@ -4,6 +4,7 @@ const searchBtn = document.querySelector('.search-btn');
 const movieList = document.querySelector('#movie');
 const searchInput = document.querySelector('.search-input');
 const moreBtn = document.querySelector('.more-button');
+const toTopBtn = document.querySelector('#to-top');
 
 const API_KEY = '7035c60c';
 const NO_POSTER = './images/no-poster.png';
@@ -54,12 +55,14 @@ function renderMovies(movies) {
               </div>
               `;
     });
-    moreBtn.style.display = 'block';
     movieList.classList.remove('notFound');
+    moreBtn.style.display = 'block';
+    toTopBtn.style.display = 'block';
   } else {
     html = "Sorry, we didn't find any movie!";
     movieList.classList.add('notFound');
     moreBtn.style.display = 'none';
+    toTopBtn.style.display = 'none';
   }
   movieList.innerHTML = html;
 }
@@ -86,5 +89,12 @@ moreBtn.addEventListener('click', async () => {
             `;
     movieItems.innerHTML = html;
     movieList.append(movieItems);
+  });
+});
+
+// 페이지 상단 이동 버튼
+toTopBtn.addEventListener('click', () => {
+  gsap.to(window, 0.7, {
+    scrollTo: 0,
   });
 });

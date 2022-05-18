@@ -164,3 +164,17 @@ header {
     }
   }
 }
+#to-top {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 35px;
+  cursor: pointer;
+  padding: 0.6rem 0.8rem;
+  background: $color--black;
+  border-radius: 50px;
+  border: 1px solid $color--orange;
+  .fa-angle-up {
+    color: $color--orange;
+  }
+}
