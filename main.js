@@ -14,7 +14,7 @@ searchBtn.addEventListener('click', async () => {
   let page = 1;
   const data = await getMovieList(searchInput.value.trim(), page);
   const movies = data.Search;
-  rederMovies(movies);
+  renderMovies(movies);
 });
 
 // Enter키 검색
@@ -22,7 +22,7 @@ searchInput.addEventListener('keydown', async (e) => {
   if (e.key === 'Enter') {
     const data = await getMovieList(searchInput.value.trim(), page);
     const movies = data.Search;
-    rederMovies(movies);
+    renderMovies(movies);
   }
 });
 
@@ -36,7 +36,7 @@ async function getMovieList(title, page) {
 }
 
 // 영화 정보 화면 출력
-function rederMovies(movies) {
+function renderMovies(movies) {
   let html = '';
   if (movies) {
     movies.forEach((movie) => {
@@ -59,6 +59,7 @@ function rederMovies(movies) {
   } else {
     html = "Sorry, we didn't find any movie!";
     movieList.classList.add('notFound');
+    moreBtn.style.display = 'none';
   }
   movieList.innerHTML = html;
 }
