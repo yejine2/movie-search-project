@@ -44,6 +44,9 @@ header {
         }
         margin-bottom: 4rem;
         color: $color--white;
+        span {
+          color: $color--orange;
+        }
       }
       .movie-search-box {
         background: $color--white;
